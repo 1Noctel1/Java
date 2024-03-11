@@ -1,0 +1,38 @@
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = new int[50];
+        Random random = new Random();
+
+        int sum = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(50) + 1;
+            sum += array[i];
+            if (array[i] < min) {
+                min = array[i];
+            }
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        System.out.print("Массив случайных чисел от 1 до 50: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i < array.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+
+        System.out.println("Макс знач = " + max);
+        System.out.println("Мин знач = " + min);
+
+        double average = (double) sum / array.length;
+        System.out.println("Среднее арифметическое = " + average);
+    }
+}
