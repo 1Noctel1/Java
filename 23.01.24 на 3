@@ -1,0 +1,14 @@
+public class Main
+{
+    public static void main(String[] args) {
+        int tFl = 10;
+        int apartments = 5;
+        
+        for (int fl = 1; fl <= tFl; fl++) {
+            for (int apart = 1; apart <= apartments; apart++) {
+                System.out.println("Этаж: " + fl + ", квартира: " + apart + " - посылка доставлена");
+            }
+        }
+    }
+}
+
