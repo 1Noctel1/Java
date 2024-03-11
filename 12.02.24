@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Введите зарплату: ");
+        double salary = scanner.nextDouble();
+        
+        System.out.println("Введите планируемые затраты на транспорт: ");
+        double transport = scanner.nextDouble();
+        
+        System.out.println("Введите планируемые затраты на еду: ");
+        double food = scanner.nextDouble();
+        
+        System.out.println("Введите сумму возможных сбережений: ");
+        double savings = scanner.nextDouble();
+        
+        compareExpenses(salary, transport, food, savings);
+    }
+
+    public static void compareExpenses(double salary, double transport, double food, double savings) {
+        double total = transport + food;
+        
+        if (total > salary) {
+            System.out.println("У вас недостаточно средств. Не хватает: " + (total - salary));
+        } else {
+            System.out.println("У вас излишек средств. Излишек: " + (salary - total));
+            if (savings > 0) {
+                System.out.println("Можно отложить на сбережения: " + savings);
+            }
+        }
+    }
+}
